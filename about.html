@@ -4,288 +4,136 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us - Salon K7 By Krishan Ranathunga</title>
+    <title>💇 About Salon K7 💈✂️ | Professional Beauty Salon</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
+            background-color: #FFFFFF;
+            color: #000000;
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(139, 69, 19, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            padding: 1rem 0;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #FFD700;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: #FFD700;
-        }
-
-        .nav-links a.active {
-            color: #FFD700;
-            border-bottom: 2px solid #FFD700;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #FFD700;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Sections */
-        .section {
-            padding: 8rem 2rem 5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #8B4513;
+            background-image: url('assets/salon-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
         }
 
-        .section-title::after {
+        body::before {
             content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            margin: 1rem auto;
-            border-radius: 2px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: -1;
         }
 
-        /* About Section */
-        .about {
-            background: linear-gradient(135deg, #FFF8DC, #F5DEB3);
-            min-height: 100vh;
+        .navbar {
+            background-color: #000000;
         }
 
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
+        .nav-link {
+            color: #FFFFFF;
+            transition: color 0.3s;
         }
 
-        .about-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: #5D4037;
+        .nav-link:hover {
+            color: #BBBBBB;
         }
 
-        .about-text p {
-            margin-bottom: 1.5rem;
+        .section-title {
+            color: #000000;
+            border-bottom: 2px solid #000000;
         }
 
-        .about-image {
-            text-align: center;
-            font-size: 15rem;
-            color: #8B4513;
-            opacity: 0.7;
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #000000;
+            transition: transform 0.3s;
         }
 
-        /* Footer */
+        .card:hover {
+            transform: scale(1.05);
+        }
+
         .footer {
-            background: #2C1810;
-            color: white;
-            text-align: center;
-            padding: 2rem;
+            background-color: #000000;
+            color: #FFFFFF;
         }
 
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+        .social-icon {
+            color: #FFFFFF;
+            transition: color 0.3s;
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .social-icon:hover {
+            color: #BBBBBB;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
+        .btn-primary {
+            background-color: #000000;
+            color: #FFFFFF;
+            transition: background-color 0.3s;
+        }
 
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(139, 69, 19, 0.98);
-                flex-direction: column;
-                padding: 1rem 0;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .about-image {
-                font-size: 8rem;
-            }
-
-            .section {
-                padding: 6rem 1rem 3rem;
-            }
+        .btn-primary:hover {
+            background-color: #BBBBBB;
+            color: #000000;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">💇 Salon K7 💈</div>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html" class="active">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="certificates.html">Certificates</a></li>
-                <li><a href="contact.html">Contact</a></li>
+    <nav class="navbar fixed top-0 w-full z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">💇 Salon K7 💈</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="certificates.html" class="nav-link">Certificates</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- About Section -->
-    <section class="section about">
-        <div class="fade-in">
-            <h2 class="section-title">About Salon K7</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Welcome to Salon K7, where beauty meets expertise! Located in the heart of Kalugamuwa,
-                        Kiralabokka, Kurunegala, our salon is dedicated to providing exceptional beauty services that
-                        enhance your natural beauty and boost your confidence.</p>
+    <header class="pt-24 pb-12 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-4">About Salon K7</h1>
+        </div>
+    </header>
 
-                    <p>Under the skilled hands of Krishan Ranathunga, we offer a complete range of professional salon
-                        services in a warm, welcoming environment. Our commitment to excellence and attention to detail
-                        ensures that every client leaves feeling refreshed, styled, and beautiful.</p>
-
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold mb-8 text-center">Our Story</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="card p-6 rounded-lg">
+                    <p class="mb-4">Welcome to Salon K7, where beauty meets expertise! Located in the heart of
+                        Kalugamuwa, Kiralabokka, Kurunegala, our salon is dedicated to providing exceptional beauty
+                        services that enhance your natural beauty and boost your confidence.</p>
+                    <p class="mb-4">Under the skilled hands of Krishan Ranathunga, we offer a complete range of
+                        professional salon services in a warm, welcoming environment. Our commitment to excellence and
+                        attention to detail ensures that every client leaves feeling refreshed, styled, and beautiful.
+                    </p>
                     <p>At Salon K7, we believe that everyone deserves to look and feel their best. Whether you're
                         preparing for a special occasion or simply treating yourself to some well-deserved pampering,
                         we're here to make your beauty dreams come true.</p>
-
-                    <p style="font-weight: bold; color: #8B4513; margin-top: 2rem;">Visit us today and experience the
-                        difference that professional care and genuine passion for beauty can make!</p>
+                    <a href="contact.html" class="btn-primary inline-block mt-4 px-6 py-2 rounded">Visit Us Today</a>
                 </div>
-                <div class="about-image">
-                    <i class="fas fa-cut"></i>
+                <div class="card p-6 rounded-lg flex items-center justify-center">
+                    <img src="assets/salon-interior.jpg" alt="Salon Interior" class="rounded-lg max-w-full h-auto">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Salon K7 by Krishan Ranathunga. All rights reserved.</p>
+    <footer class="footer py-6 text-center">
+        <p>© 2024 Salon K7 by Krishan Ranathunga. All rights reserved.</p>
         <p>💇‍♀️ Professional Beauty Salon in Kurunegala, Sri Lanka 💈</p>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(139, 69, 19, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(139, 69, 19, 0.95)';
-            }
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Add fade-in class on load
-        window.addEventListener('load', function () {
-            document.querySelector('.fade-in').classList.add('visible');
-        });
-    </script>
 </body>
 
 </html>

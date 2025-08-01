@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💇 Products - Salon K7 💈✂️ | Professional Beauty Salon</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #FFFFFF;
+            color: #000000;
+            font-family: 'Arial', sans-serif;
+            background-image: url('assets/salon-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: -1;
+        }
+
+        .navbar {
+            background-color: #000000;
+        }
+
+        .nav-link {
+            color: #FFFFFF;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #BBBBBB;
+        }
+
+        .section-title {
+            color: #000000;
+            border-bottom: 2px solid #000000;
+        }
+
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #000000;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+
+        .social-icon {
+            color: #FFFFFF;
+            transition: color 0.3s;
+        }
+
+        .social-icon:hover {
+            color: #BBBBBB;
+        }
+
+        .btn-primary {
+            background-color: #000000;
+            color: #FFFFFF;
+            transition: background-color 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #BBBBBB;
+            color: #000000;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar fixed top-0 w-full z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">💇 Salon K7 💈</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="certificates.html" class="nav-link">Certificates</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header class="pt-24 pb-12 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-4">Our Products</h1>
+        </div>
+    </header>
+
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold mb-8 text-center">Premium Beauty Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-spray-can text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Shampoos & Conditioners</h3>
+                    <p>High-quality shampoos and conditioners for all hair types, ensuring nourishment and shine.</p>
+                </div>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-tint text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Hair Dyes</h3>
+                    <p>Professional-grade hair dyes for vibrant, long-lasting color with minimal damage.</p>
+                </div>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-cream text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Skincare Products</h3>
+                    <p>Premium skincare creams and serums for hydrated, glowing skin.</p>
+                </div>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-lipstick text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Makeup Essentials</h3>
+                    <p>Professional makeup products for flawless looks, from foundations to lipsticks.</p>
+                </div>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-polish text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Nail Polishes</h3>
+                    <p>Durable, vibrant nail polishes in a variety of shades for stunning nail art.</p>
+                </div>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-spray-can-sparkles text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Hair Styling Products</h3>
+                    <p>Gels, mousses, and sprays to create and maintain your perfect hairstyle.</p>
+                </div>
+            </div>
+            <p class="text-center mt-8">Visit our salon to purchase these products or contact us for more details!</p>
+            <div class="text-center mt-4">
+                <a href="contact.html" class="btn-primary inline-block px-6 py-2 rounded">Contact Us</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer py-6 text-center">
+        <p>© 2024 Salon K7 by Krishan Ranathunga. All rights reserved.</p>
+        <p>💇‍♀️ Professional Beauty Salon in Kurunegala, Sri Lanka 💈</p>
+    </footer>
+</body>
+
+</html>

@@ -4,344 +4,154 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Professional Certificates - Salon K7 By Krishan Ranathunga</title>
+    <title>💇 Certificates - Salon K7 💈✂️ | Professional Beauty Salon</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
+            background-color: #FFFFFF;
+            color: #000000;
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-            background: #F5F5DC;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(139, 69, 19, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            padding: 1rem 0;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #FFD700;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: #FFD700;
-        }
-
-        .nav-links a.active {
-            color: #FFD700;
-            border-bottom: 2px solid #FFD700;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #FFD700;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Sections */
-        .section {
-            padding: 8rem 2rem 5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #8B4513;
+            background-image: url('assets/salon-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
         }
 
-        .section-title::after {
+        body::before {
             content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            margin: 1rem auto;
-            border-radius: 2px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: -1;
         }
 
-        /* Certificates Section */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .navbar {
+            background-color: #000000;
         }
 
-        .cert-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border: 3px solid #FFD700;
-            transition: transform 0.3s ease;
+        .nav-link {
+            color: #FFFFFF;
+            transition: color 0.3s;
         }
 
-        .cert-card:hover {
+        .nav-link:hover {
+            color: #BBBBBB;
+        }
+
+        .section-title {
+            color: #000000;
+            border-bottom: 2px solid #000000;
+        }
+
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #000000;
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
             transform: scale(1.05);
         }
 
-        .cert-icon {
-            font-size: 3rem;
-            color: #8B4513;
-            margin-bottom: 1rem;
-        }
-
-        .cert-card h3 {
-            color: #5D4037;
-            margin-bottom: 1rem;
-            font-size: 1.3rem;
-        }
-
-        .cert-card p {
-            color: #5D4037;
-            line-height: 1.6;
-        }
-
-        /* Reviews Section */
-        .reviews {
-            background: white;
-            text-align: center;
-            margin-top: 3rem;
-            padding: 3rem 2rem;
-            border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .review-placeholder {
-            background: linear-gradient(135deg, #FFF8DC, #F0E68C);
-            padding: 3rem;
-            border-radius: 15px;
-            margin-top: 2rem;
-            border: 2px dashed #FFD700;
-        }
-
-        .stars {
-            font-size: 2rem;
-            color: #FFD700;
-            margin-bottom: 1rem;
-        }
-
-        /* Footer */
         .footer {
-            background: #2C1810;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            background-color: #000000;
+            color: #FFFFFF;
         }
 
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+        .social-icon {
+            color: #FFFFFF;
+            transition: color 0.3s;
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .social-icon:hover {
+            color: #BBBBBB;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
+        .btn-primary {
+            background-color: #000000;
+            color: #FFFFFF;
+            transition: background-color 0.3s;
+        }
 
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(139, 69, 19, 0.98);
-                flex-direction: column;
-                padding: 1rem 0;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-
-            .section {
-                padding: 6rem 1rem 3rem;
-            }
-
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
+        .btn-primary:hover {
+            background-color: #BBBBBB;
+            color: #000000;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">💇 Salon K7 💈</div>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="certificates.html" class="active">Certificates</a></li>
-                <li><a href="contact.html">Contact</a></li>
+    <nav class="navbar fixed top-0 w-full z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">💇 Salon K7 💈</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="certificates.html" class="nav-link">Certificates</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Certificates Section -->
-    <section class="section certificates">
-        <div class="fade-in">
-            <h2 class="section-title">Professional Certifications</h2>
-            <div class="cert-grid">
-                <div class="cert-card">
-                    <div class="cert-icon">🏆</div>
-                    <h3>Beauty Specialist Certificate</h3>
+    <header class="pt-24 pb-12 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-4">Professional Certifications</h1>
+        </div>
+    </header>
+
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold mb-8 text-center">Our Credentials</h2>
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-trophy text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Beauty Specialist</h3>
                     <p>Certified professional beauty specialist with advanced training in modern techniques.</p>
                 </div>
-                <div class="cert-card">
-                    <div class="cert-icon">📜</div>
-                    <h3>Hair Styling Diploma</h3>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-scroll text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Hair Styling Diploma</h3>
                     <p>Advanced diploma in professional hair styling and cutting techniques.</p>
                 </div>
-                <div class="cert-card">
-                    <div class="cert-icon">🎨</div>
-                    <h3>Makeup Artistry</h3>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-palette text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Makeup Artistry</h3>
                     <p>Professional makeup artistry certification for special occasions and bridal makeup.</p>
                 </div>
-                <div class="cert-card">
-                    <div class="cert-icon">🌟</div>
-                    <h3>Skincare Specialist</h3>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-star text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Skincare Specialist</h3>
                     <p>Certified in advanced skincare treatments and facial therapy techniques.</p>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Reviews Section -->
-        <div class="reviews fade-in">
-            <h2 class="section-title">Customer Reviews</h2>
-            <div class="review-placeholder">
-                <div class="stars">☆☆☆☆☆</div>
-                <h3>Not yet rated (0 Reviews)</h3>
-                <p>Be the first to review Salon K7! We'd love to hear about your experience with our services.</p>
-                <p style="margin-top: 1rem; font-style: italic;">Your feedback helps us serve you better and helps other
-                    customers make informed decisions.</p>
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold mb-8 text-center">Customer Reviews</h2>
+            <div class="card p-6 rounded-lg text-center">
+                <p class="text-2xl mb-4">☆☆☆☆☆</p>
+                <p class="mb-4">Not yet rated (0 Reviews)</p>
+                <p class="mb-4">Be the first to review Salon K7! We'd love to hear about your experience with our
+                    services.</p>
+                <p>Your feedback helps us serve you better and helps other customers make informed decisions.</p>
+                <a href="contact.html" class="btn-primary inline-block mt-4 px-6 py-2 rounded">Leave a Review</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Salon K7 by Krishan Ranathunga. All rights reserved.</p>
+    <footer class="footer py-6 text-center">
+        <p>© 2024 Salon K7 by Krishan Ranathunga. All rights reserved.</p>
         <p>💇‍♀️ Professional Beauty Salon in Kurunegala, Sri Lanka 💈</p>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(139, 69, 19, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(139, 69, 19, 0.95)';
-            }
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Interactive effects for cert cards
-        document.querySelectorAll('.cert-card').forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.transform = 'scale(1.05) rotateY(5deg)';
-            });
-
-            card.addEventListener('mouseleave', function () {
-                this.style.transform = 'scale(1) rotateY(0deg)';
-            });
-        });
-
-        // Add fade-in class on load
-        window.addEventListener('load', function () {
-            document.querySelectorAll('.fade-in').forEach(el => {
-                el.classList.add('visible');
-            });
-        });
-    </script>
 </body>
 
 </html>

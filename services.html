@@ -4,319 +4,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Services - Salon K7 By Krishan Ranathunga</title>
+    <title>💇 Services - Salon K7 💈✂️ | Professional Beauty Salon</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
         body {
+            background-color: #FFFFFF;
+            color: #000000;
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            overflow-x: hidden;
-            background: white;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(139, 69, 19, 0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            transition: all 0.3s ease;
-            padding: 1rem 0;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 2rem;
-        }
-
-        .nav-logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: #FFD700;
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-links a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-weight: 500;
-        }
-
-        .nav-links a:hover {
-            color: #FFD700;
-        }
-
-        .nav-links a.active {
-            color: #FFD700;
-            border-bottom: 2px solid #FFD700;
-        }
-
-        .mobile-menu-btn {
-            display: none;
-            background: none;
-            border: none;
-            color: #FFD700;
-            font-size: 1.5rem;
-            cursor: pointer;
-        }
-
-        /* Sections */
-        .section {
-            padding: 8rem 2rem 5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 3rem;
-            color: #8B4513;
+            background-image: url('assets/salon-bg.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             position: relative;
         }
 
-        .section-title::after {
+        body::before {
             content: '';
-            display: block;
-            width: 100px;
-            height: 3px;
-            background: linear-gradient(45deg, #FFD700, #FFA500);
-            margin: 1rem auto;
-            border-radius: 2px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            z-index: -1;
         }
 
-        /* Services Section */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+        .navbar {
+            background-color: #000000;
         }
 
-        .service-card {
-            background: linear-gradient(135deg, #FFF8DC, #F0E68C);
-            padding: 2rem;
-            border-radius: 15px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 2px solid transparent;
+        .nav-link {
+            color: #FFFFFF;
+            transition: color 0.3s;
         }
 
-        .service-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
-            border-color: #FFD700;
+        .nav-link:hover {
+            color: #BBBBBB;
         }
 
-        .service-icon {
-            font-size: 3rem;
-            color: #8B4513;
-            margin-bottom: 1rem;
+        .section-title {
+            color: #000000;
+            border-bottom: 2px solid #000000;
         }
 
-        .service-title {
-            font-size: 1.5rem;
-            color: #5D4037;
-            margin-bottom: 1rem;
+        .card {
+            background-color: #FFFFFF;
+            border: 1px solid #000000;
+            transition: transform 0.3s;
         }
 
-        .service-card p {
-            color: #5D4037;
-            line-height: 1.6;
+        .card:hover {
+            transform: scale(1.05);
         }
 
-        /* Footer */
         .footer {
-            background: #2C1810;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            margin-top: 3rem;
+            background-color: #000000;
+            color: #FFFFFF;
         }
 
-        /* Animations */
-        .fade-in {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: all 0.6s ease;
+        .social-icon {
+            color: #FFFFFF;
+            transition: color 0.3s;
         }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
+        .social-icon:hover {
+            color: #BBBBBB;
         }
 
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .mobile-menu-btn {
-                display: block;
-            }
+        .btn-primary {
+            background-color: #000000;
+            color: #FFFFFF;
+            transition: background-color 0.3s;
+        }
 
-            .nav-links {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background: rgba(139, 69, 19, 0.98);
-                flex-direction: column;
-                padding: 1rem 0;
-            }
-
-            .nav-links.active {
-                display: flex;
-            }
-
-            .nav-links li {
-                margin: 0.5rem 0;
-            }
-
-            .section {
-                padding: 6rem 1rem 3rem;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
+        .btn-primary:hover {
+            background-color: #BBBBBB;
+            color: #000000;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">💇 Salon K7 💈</div>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
-                <i class="fas fa-bars"></i>
-            </button>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html" class="active">Services</a></li>
-                <li><a href="certificates.html">Certificates</a></li>
-                <li><a href="contact.html">Contact</a></li>
+    <nav class="navbar fixed top-0 w-full z-10">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold text-white">💇 Salon K7 💈</a>
+            <ul class="flex space-x-6">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="services.html" class="nav-link">Services</a></li>
+                <li><a href="products.html" class="nav-link">Products</a></li>
+                <li><a href="certificates.html" class="nav-link">Certificates</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Services Section -->
-    <section class="section services">
-        <div class="fade-in">
-            <h2 class="section-title">Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">💇‍♀️</div>
-                    <h3 class="service-title">Hair Styling</h3>
+    <header class="pt-24 pb-12 text-center">
+        <div class="container mx-auto px-4">
+            <h1 class="text-5xl font-bold mb-4">Our Services</h1>
+        </div>
+    </header>
+
+    <section class="py-12">
+        <div class="container mx-auto px-4">
+            <h2 class="section-title text-3xl font-bold mb-8 text-center">Professional Beauty Services</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-cut text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Hair Styling</h3>
                     <p>Professional haircuts, styling, and treatments for all hair types. From classic cuts to modern
                         trends.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">💄</div>
-                    <h3 class="service-title">Makeup Services</h3>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-paint-brush text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Makeup Services</h3>
                     <p>Professional makeup for special occasions, weddings, and everyday glamour.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">💅</div>
-                    <h3 class="service-title">Nail Care</h3>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-hand-sparkles text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Nail Care</h3>
                     <p>Manicures, pedicures, and nail art services to keep your nails looking perfect.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">🌟</div>
-                    <h3 class="service-title">Facial Treatments</h3>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-spa text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Facial Treatments</h3>
                     <p>Rejuvenating facial treatments and skincare services for healthy, glowing skin.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">💆‍♀️</div>
-                    <h3 class="service-title">Head Massage</h3>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-massage text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Head Massage</h3>
                     <p>Relaxing head and scalp massages to relieve stress and promote hair health.</p>
                 </div>
-                <div class="service-card">
-                    <div class="service-icon">✨</div>
-                    <h3 class="service-title">Bridal Packages</h3>
+                <div class="card p-6 rounded-lg text-center">
+                    <i class="fas fa-ring text-4xl mb-4"></i>
+                    <h3 class="text-xl font-bold mb-2">Bridal Packages</h3>
                     <p>Complete bridal beauty packages for your special day, including trials and touch-ups.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <p>&copy; 2024 Salon K7 by Krishan Ranathunga. All rights reserved.</p>
+    <footer class="footer py-6 text-center">
+        <p>© 2024 Salon K7 by Krishan Ranathunga. All rights reserved.</p>
         <p>💇‍♀️ Professional Beauty Salon in Kurunegala, Sri Lanka 💈</p>
     </footer>
-
-    <script>
-        // Mobile menu toggle
-        function toggleMobileMenu() {
-            const navLinks = document.getElementById('navLinks');
-            navLinks.classList.toggle('active');
-        }
-
-        // Navbar background change on scroll
-        window.addEventListener('scroll', function () {
-            const navbar = document.querySelector('.navbar');
-            if (window.scrollY > 100) {
-                navbar.style.background = 'rgba(139, 69, 19, 0.98)';
-            } else {
-                navbar.style.background = 'rgba(139, 69, 19, 0.95)';
-            }
-        });
-
-        // Fade in animation on scroll
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver(function (entries) {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('visible');
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.fade-in').forEach(el => {
-            observer.observe(el);
-        });
-
-        // Interactive effects for service cards
-        document.querySelectorAll('.service-card').forEach(card => {
-            card.addEventListener('mouseenter', function () {
-                this.style.transform = 'translateY(-10px) scale(1.02)';
-            });
-
-            card.addEventListener('mouseleave', function () {
-                this.style.transform = 'translateY(0) scale(1)';
-            });
-        });
-
-        // Add fade-in class on load
-        window.addEventListener('load', function () {
-            document.querySelector('.fade-in').classList.add('visible');
-        });
-    </script>
 </body>
 
 </html>
