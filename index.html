@@ -1,0 +1,779 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💇 Salon K7 By Krishan Ranathunga 💈✂️ | Professional Beauty Salon</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        /* Navigation */
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(139, 69, 19, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #FFD700;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-links a:hover {
+            color: #FFD700;
+        }
+
+        .nav-links a.active {
+            color: #FFD700;
+            border-bottom: 2px solid #FFD700;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #8B4513, #A0522D, #CD853F);
+            color: white;
+            text-align: center;
+            padding: 12rem 2rem 8rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-icons {
+            font-size: 4rem;
+            margin-bottom: 2rem;
+            animation: bounce 2s infinite;
+        }
+
+        .salon-logo {
+            font-size: 4rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .salon-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+            color: #FFD700;
+        }
+
+        /* Sections */
+        .section {
+            padding: 5rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #8B4513;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* About Section */
+        .about {
+            background: linear-gradient(135deg, #FFF8DC, #F5DEB3);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: #5D4037;
+        }
+
+        .about-text p {
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image {
+            text-align: center;
+            font-size: 15rem;
+            color: #8B4513;
+            opacity: 0.7;
+        }
+
+        /* Services Section */
+        .services {
+            background: white;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background: linear-gradient(135deg, #FFF8DC, #F0E68C);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(139, 69, 19, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(139, 69, 19, 0.3);
+            border-color: #FFD700;
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            color: #8B4513;
+            margin-bottom: 1rem;
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            color: #5D4037;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #5D4037;
+            line-height: 1.6;
+        }
+
+        /* Certificates Section */
+        .certificates {
+            background: #F5F5DC;
+        }
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .cert-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border: 3px solid #FFD700;
+            transition: transform 0.3s ease;
+        }
+
+        .cert-card:hover {
+            transform: scale(1.05);
+        }
+
+        .cert-icon {
+            font-size: 3rem;
+            color: #8B4513;
+            margin-bottom: 1rem;
+        }
+
+        .cert-card h3 {
+            color: #5D4037;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .cert-card p {
+            color: #5D4037;
+            line-height: 1.6;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            background: white;
+            text-align: center;
+        }
+
+        .review-placeholder {
+            background: linear-gradient(135deg, #FFF8DC, #F0E68C);
+            padding: 3rem;
+            border-radius: 15px;
+            margin-top: 2rem;
+            border: 2px dashed #FFD700;
+        }
+
+        .stars {
+            font-size: 2rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: linear-gradient(135deg, #8B4513, #A0522D);
+            color: white;
+        }
+
+        .contact .section-title {
+            color: white;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.3s ease;
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            background: rgba(255, 255, 255, 0.15);
+        }
+
+        .contact-icon {
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+
+        .contact-info {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .contact-info a {
+            color: #FFD700;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+            color: #FFA500;
+        }
+
+        /* Social Media Section */
+        .social-media {
+            background: linear-gradient(135deg, #2C1810, #8B4513);
+            color: white;
+            text-align: center;
+            padding: 5rem 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 50%;
+            color: #FFD700;
+            font-size: 2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+
+        .social-link:hover {
+            background: #FFD700;
+            color: #8B4513;
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        /* Footer */
+        .footer {
+            background: #2C1810;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        /* Animations */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        /* Mobile Menu */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: #FFD700;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: rgba(139, 69, 19, 0.98);
+                flex-direction: column;
+                padding: 1rem 0;
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 0.5rem 0;
+            }
+
+            .hero {
+                padding: 8rem 1rem 4rem;
+            }
+
+            .salon-logo {
+                font-size: 2.5rem;
+            }
+
+            .hero-icons {
+                font-size: 2.5rem;
+            }
+
+            .section {
+                padding: 3rem 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .about-image {
+                font-size: 8rem;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .social-links {
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">💇 Salon K7 💈</div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <i class="fas fa-bars"></i>
+            </button>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="certificates.html">Certificates</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-icons">💇‍♀️💈✂️</div>
+            <h1 class="salon-logo">Salon K7</h1>
+            <p class="salon-subtitle">By Krishan Ranathunga</p>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">Professional Beauty Salon</p>
+            <p style="font-size: 1.1rem;">📍 Kalugamuwa, Kiralabokka, Kurunegala, Sri Lanka</p>
+            <p style="font-size: 1.1rem;">📞 071 524 1082</p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+        <div class="fade-in">
+            <h2 class="section-title">About Salon K7</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Welcome to Salon K7, where beauty meets expertise! Located in the heart of Kalugamuwa,
+                        Kiralabokka, Kurunegala, our salon is dedicated to providing exceptional beauty services that
+                        enhance your natural beauty and boost your confidence.</p>
+
+                    <p>Under the skilled hands of Krishan Ranathunga, we offer a complete range of professional salon
+                        services in a warm, welcoming environment. Our commitment to excellence and attention to detail
+                        ensures that every client leaves feeling refreshed, styled, and beautiful.</p>
+
+                    <p>At Salon K7, we believe that everyone deserves to look and feel their best. Whether you're
+                        preparing for a special occasion or simply treating yourself to some well-deserved pampering,
+                        we're here to make your beauty dreams come true.</p>
+                </div>
+                <div class="about-image">
+                    <i class="fas fa-cut"></i>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="section services">
+        <div class="fade-in">
+            <h2 class="section-title">Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💇‍♀️</div>
+                    <h3 class="service-title">Hair Styling</h3>
+                    <p>Professional haircuts, styling, and treatments for all hair types. From classic cuts to modern
+                        trends.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💄</div>
+                    <h3 class="service-title">Makeup Services</h3>
+                    <p>Professional makeup for special occasions, weddings, and everyday glamour.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💅</div>
+                    <h3 class="service-title">Nail Care</h3>
+                    <p>Manicures, pedicures, and nail art services to keep your nails looking perfect.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🌟</div>
+                    <h3 class="service-title">Facial Treatments</h3>
+                    <p>Rejuvenating facial treatments and skincare services for healthy, glowing skin.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💆‍♀️</div>
+                    <h3 class="service-title">Head Massage</h3>
+                    <p>Relaxing head and scalp massages to relieve stress and promote hair health.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">✨</div>
+                    <h3 class="service-title">Bridal Packages</h3>
+                    <p>Complete bridal beauty packages for your special day, including trials and touch-ups.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section certificates">
+        <div class="fade-in">
+            <h2 class="section-title">Professional Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">🏆</div>
+                    <h3>Beauty Specialist Certificate</h3>
+                    <p>Certified professional beauty specialist with advanced training in modern techniques.</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">📜</div>
+                    <h3>Hair Styling Diploma</h3>
+                    <p>Advanced diploma in professional hair styling and cutting techniques.</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🎨</div>
+                    <h3>Makeup Artistry</h3>
+                    <p>Professional makeup artistry certification for special occasions and bridal makeup.</p>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">🌟</div>
+                    <h3>Skincare Specialist</h3>
+                    <p>Certified in advanced skincare treatments and facial therapy techniques.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="section reviews">
+        <div class="fade-in">
+            <h2 class="section-title">Customer Reviews</h2>
+            <div class="review-placeholder">
+                <div class="stars">☆☆☆☆☆</div>
+                <h3>Not yet rated (0 Reviews)</h3>
+                <p>Be the first to review Salon K7! We'd love to hear about your experience with our services.</p>
+                <p style="margin-top: 1rem; font-style: italic;">Your feedback helps us serve you better and helps other
+                    customers make informed decisions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+        <div class="fade-in">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <div class="contact-icon">📍</div>
+                    <h3>Location</h3>
+                    <div class="contact-info">
+                        Kalugamuwa, Kiralabokka<br>
+                        Kurunegala, Sri Lanka
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">📞</div>
+                    <h3>Phone</h3>
+                    <div class="contact-info">
+                        <a href="tel:0715241082">071 524 1082</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">🕒</div>
+                    <h3>Working Hours</h3>
+                    <div class="contact-info">
+                        Mon - Sat: 8:00 AM - 8:00 PM<br>
+                        Sunday: 9:00 AM - 6:00 PM
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">💰</div>
+                    <h3>Services</h3>
+                    <div class="contact-info">
+                        Beauty Salon<br>
+                        Professional Styling<br>
+                        Affordable Prices
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Media Section -->
+    <section class="section social-media">
+        <div class="fade-in">
+            <h2 class="section-title" style="color: white;">Follow Us</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 2rem;">Stay connected for the latest updates, tips, and special
+                offers!</p>
+            <div class="social-links">
+                <a href="https://tiktok.com/@userzku31al6pr" class="social-link" target="_blank" rel="noopener">
+                    <i class="fab fa-tiktok"></i>
+                </a>
+                <a href="https://youtube.com/@IndrajithRanathunga" class="social-link" target="_blank" rel="noopener">
+                    <i class="fab fa-youtube"></i>
+                </a>
+                <a href="tel:0715241082" class="social-link">
+                    <i class="fas fa-phone"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Salon K7 by Krishan Ranathunga. All rights reserved.</p>
+        <p>💇‍♀️ Professional Beauty Salon in Kurunegala, Sri Lanka 💈</p>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        // Navbar background change on scroll
+        window.addEventListener('scroll', function () {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 100) {
+                navbar.style.background = 'rgba(139, 69, 19, 0.98)';
+            } else {
+                navbar.style.background = 'rgba(139, 69, 19, 0.95)';
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function (entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Interactive effects for service cards
+        document.querySelectorAll('.service-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'translateY(-10px) scale(1.02)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'translateY(0) scale(1)';
+            });
+        });
+
+        // Interactive effects for cert cards
+        document.querySelectorAll('.cert-card').forEach(card => {
+            card.addEventListener('mouseenter', function () {
+                this.style.transform = 'scale(1.05) rotateY(5deg)';
+            });
+
+            card.addEventListener('mouseleave', function () {
+                this.style.transform = 'scale(1) rotateY(0deg)';
+            });
+        });
+
+        // Contact item click effects
+        document.querySelectorAll('.contact-item').forEach(item => {
+            item.addEventListener('click', function () {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 150);
+            });
+        });
+
+        // Add fade-in class on load
+        window.addEventListener('load', function () {
+            document.querySelectorAll('.fade-in').forEach(el => {
+                el.classList.add('visible');
+            });
+        });
+    </script>
+</body>
+
+</html>
